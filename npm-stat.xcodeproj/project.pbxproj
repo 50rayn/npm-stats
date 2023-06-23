@@ -14,6 +14,21 @@
 		EA0253D72A2FBE740016D292 /* npm_statTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0253D62A2FBE740016D292 /* npm_statTests.swift */; };
 		EA0253E12A2FBE740016D292 /* npm_statUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0253E02A2FBE740016D292 /* npm_statUITests.swift */; };
 		EA0253E32A2FBE740016D292 /* npm_statUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0253E22A2FBE740016D292 /* npm_statUITestsLaunchTests.swift */; };
+		EA0253F12A308CFB0016D292 /* ModuleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0253F02A308CFB0016D292 /* ModuleRow.swift */; };
+		EA0253F32A30F60D0016D292 /* ModuleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0253F22A30F60D0016D292 /* ModuleList.swift */; };
+		EA0253F52A30F65B0016D292 /* ModuleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0253F42A30F65B0016D292 /* ModuleDetail.swift */; };
+		EA0253F82A30F7630016D292 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0253F72A30F7630016D292 /* Module.swift */; };
+		EA0253FB2A312FC50016D292 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = EA0253FA2A312FC50016D292 /* SwiftUICharts */; };
+		EA54E4F32A33A6C000020D66 /* DateRangePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA54E4F22A33A6C000020D66 /* DateRangePickerView.swift */; };
+		EA54E4F62A33B52500020D66 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA54E4F52A33B52500020D66 /* ChartViewModel.swift */; };
+		EA54E4F92A33BD1000020D66 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA54E4F82A33BD1000020D66 /* EmptyStateView.swift */; };
+		EA54E4FB2A33BD3200020D66 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA54E4FA2A33BD3200020D66 /* LoadingStateView.swift */; };
+		EA54E4FD2A33BD4A00020D66 /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA54E4FC2A33BD4A00020D66 /* ErrorStateView.swift */; };
+		EA54E4FF2A33BE6000020D66 /* FetchPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA54E4FE2A33BE6000020D66 /* FetchPhase.swift */; };
+		EA54E5012A33C74000020D66 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA54E5002A33C74000020D66 /* ChartView.swift */; };
+		EAC7B59C2A45B7CD002B18B2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC7B59B2A45B7CC002B18B2 /* Home.swift */; };
+		EAC7B5A02A45C30E002B18B2 /* ModuleDetailReadme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC7B59F2A45C30E002B18B2 /* ModuleDetailReadme.swift */; };
+		EAC87E002A378C0C0038DBFF /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = EAC87DFF2A378C0C0038DBFF /* MarkdownUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +59,19 @@
 		EA0253DC2A2FBE740016D292 /* npm-statUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "npm-statUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0253E02A2FBE740016D292 /* npm_statUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = npm_statUITests.swift; sourceTree = "<group>"; };
 		EA0253E22A2FBE740016D292 /* npm_statUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = npm_statUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EA0253F02A308CFB0016D292 /* ModuleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleRow.swift; sourceTree = "<group>"; };
+		EA0253F22A30F60D0016D292 /* ModuleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleList.swift; sourceTree = "<group>"; };
+		EA0253F42A30F65B0016D292 /* ModuleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleDetail.swift; sourceTree = "<group>"; };
+		EA0253F72A30F7630016D292 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		EA54E4F22A33A6C000020D66 /* DateRangePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangePickerView.swift; sourceTree = "<group>"; };
+		EA54E4F52A33B52500020D66 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		EA54E4F82A33BD1000020D66 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		EA54E4FA2A33BD3200020D66 /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
+		EA54E4FC2A33BD4A00020D66 /* ErrorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
+		EA54E4FE2A33BE6000020D66 /* FetchPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhase.swift; sourceTree = "<group>"; };
+		EA54E5002A33C74000020D66 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		EAC7B59B2A45B7CC002B18B2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		EAC7B59F2A45C30E002B18B2 /* ModuleDetailReadme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleDetailReadme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA0253FB2A312FC50016D292 /* SwiftUICharts in Frameworks */,
+				EAC87E002A378C0C0038DBFF /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +124,10 @@
 		EA0253C42A2FBE720016D292 /* npm-stat */ = {
 			isa = PBXGroup;
 			children = (
+				EA54E4F42A33B4F600020D66 /* ViewModels */,
+				EA0253F62A30F7410016D292 /* Model */,
+				EA0253EF2A308C6E0016D292 /* Views */,
 				EA0253C52A2FBE720016D292 /* npm_statApp.swift */,
-				EA0253C72A2FBE720016D292 /* ContentView.swift */,
 				EA0253C92A2FBE740016D292 /* Assets.xcassets */,
 				EA0253CB2A2FBE740016D292 /* Preview Content */,
 			);
@@ -127,6 +159,73 @@
 			path = "npm-statUITests";
 			sourceTree = "<group>";
 		};
+		EA0253EF2A308C6E0016D292 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EAC7B59D2A45C272002B18B2 /* Components */,
+				EAC7B59A2A45B787002B18B2 /* Screens */,
+				EA54E4F72A33BCFF00020D66 /* Common */,
+				EA0253C72A2FBE720016D292 /* ContentView.swift */,
+				EA0253F02A308CFB0016D292 /* ModuleRow.swift */,
+				EA0253F22A30F60D0016D292 /* ModuleList.swift */,
+				EA54E4F22A33A6C000020D66 /* DateRangePickerView.swift */,
+				EA54E5002A33C74000020D66 /* ChartView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EA0253F62A30F7410016D292 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EA0253F72A30F7630016D292 /* Module.swift */,
+				EA54E4FE2A33BE6000020D66 /* FetchPhase.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EA54E4F42A33B4F600020D66 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EA54E4F52A33B52500020D66 /* ChartViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EA54E4F72A33BCFF00020D66 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EA54E4F82A33BD1000020D66 /* EmptyStateView.swift */,
+				EA54E4FA2A33BD3200020D66 /* LoadingStateView.swift */,
+				EA54E4FC2A33BD4A00020D66 /* ErrorStateView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		EAC7B59A2A45B787002B18B2 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EA0253F42A30F65B0016D292 /* ModuleDetail.swift */,
+				EAC7B59B2A45B7CC002B18B2 /* Home.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		EAC7B59D2A45C272002B18B2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EAC7B59E2A45C2DD002B18B2 /* ModuleDetail */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EAC7B59E2A45C2DD002B18B2 /* ModuleDetail */ = {
+			isa = PBXGroup;
+			children = (
+				EAC7B59F2A45C30E002B18B2 /* ModuleDetailReadme.swift */,
+			);
+			path = ModuleDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +242,10 @@
 			dependencies = (
 			);
 			name = "npm-stat";
+			packageProductDependencies = (
+				EA0253FA2A312FC50016D292 /* SwiftUICharts */,
+				EAC87DFF2A378C0C0038DBFF /* MarkdownUI */,
+			);
 			productName = "npm-stat";
 			productReference = EA0253C22A2FBE720016D292 /* npm-stat.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +318,10 @@
 				Base,
 			);
 			mainGroup = EA0253B92A2FBE720016D292;
+			packageReferences = (
+				EA0253F92A312FC50016D292 /* XCRemoteSwiftPackageReference "ChartView" */,
+				EAC87DFE2A378C0C0038DBFF /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+			);
 			productRefGroup = EA0253C32A2FBE720016D292 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +364,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA54E4F92A33BD1000020D66 /* EmptyStateView.swift in Sources */,
+				EAC7B5A02A45C30E002B18B2 /* ModuleDetailReadme.swift in Sources */,
+				EA54E5012A33C74000020D66 /* ChartView.swift in Sources */,
 				EA0253C82A2FBE720016D292 /* ContentView.swift in Sources */,
+				EA0253F32A30F60D0016D292 /* ModuleList.swift in Sources */,
 				EA0253C62A2FBE720016D292 /* npm_statApp.swift in Sources */,
+				EA54E4F32A33A6C000020D66 /* DateRangePickerView.swift in Sources */,
+				EAC7B59C2A45B7CD002B18B2 /* Home.swift in Sources */,
+				EA54E4FD2A33BD4A00020D66 /* ErrorStateView.swift in Sources */,
+				EA0253F52A30F65B0016D292 /* ModuleDetail.swift in Sources */,
+				EA54E4F62A33B52500020D66 /* ChartViewModel.swift in Sources */,
+				EA54E4FB2A33BD3200020D66 /* LoadingStateView.swift in Sources */,
+				EA0253F12A308CFB0016D292 /* ModuleRow.swift in Sources */,
+				EA54E4FF2A33BE6000020D66 /* FetchPhase.swift in Sources */,
+				EA0253F82A30F7630016D292 /* Module.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,9 +534,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"npm-stat/Preview Content\"";
+				DEVELOPMENT_TEAM = 8KXNA9KC42;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -431,6 +553,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Noction.npm-stat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -442,9 +565,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"npm-stat/Preview Content\"";
+				DEVELOPMENT_TEAM = 8KXNA9KC42;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -459,6 +584,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Noction.npm-stat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -577,6 +703,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EA0253F92A312FC50016D292 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = exactVersion;
+				version = "2.0.0-beta.2";
+			};
+		};
+		EAC87DFE2A378C0C0038DBFF /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EA0253FA2A312FC50016D292 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA0253F92A312FC50016D292 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+		EAC87DFF2A378C0C0038DBFF /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EAC87DFE2A378C0C0038DBFF /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EA0253BA2A2FBE720016D292 /* Project object */;
 }
