@@ -5,7 +5,6 @@
 //  Created by Sorin Gitlan on 07.06.2023.
 //
 
-import MarkdownUI
 import SwiftUI
 
 struct NodePoint: Codable {
@@ -25,29 +24,14 @@ struct NodeEntry: Codable {
     let downloads: [NodePoint]
 }
 
-struct DetailRow: View {
-    let title: String
-    let value: String
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(title)
-                .font(.caption)
-                .foregroundColor(.secondary)
-            Text(value)
-                .font(.body)
-        }
-    }
-}
-
-struct ModuleInfo: Decodable {
+struct ModuleInfo: Decodable, Equatable {
     let name: String
     let description: String?
     //    let homepage: URL?
     //    let repository: Repository?
     let maintainers: [Maintainer]
     let keywords: [String]?
-    let readme: String
+    var readme: String
     //    let license: String?
     let version: String?
     //    let versions: [String: String]?
@@ -71,7 +55,7 @@ struct ModuleInfo: Decodable {
     //        let url: URL
     //    }
     //
-    struct Maintainer: Codable {
+    struct Maintainer: Codable, Equatable {
         let name: String
         let email: String?
     }
@@ -99,41 +83,42 @@ struct ModuleInfo: Decodable {
     //    }
 }
 
-
-
 struct ModuleDetail: View {
-    var moduleName: String
     let packageName: String
     @EnvironmentObject var favourites: FavoriteStorageViewModel
-
-    @State var results: NodeEntry? = nil
-    @State var period: String = "last-week"
+    @State var period: String
     @StateObject var chartVM: ChartViewModel = ChartViewModel()
     @State var isLoading: Bool = false
     @State var moduleInfo: ModuleInfo? = nil
+    @State var readme: String? = nil
     @State private var selectedTab: Int = 0
     @State private var isLoadingMarkdown: Bool = true
     
-   
     
-    init(moduleName: String) {
-        self.moduleName = moduleName
-        self.packageName = moduleName
-        self.period = "last-week"
+    
+    init(packageName: String) {
+        self.packageName = packageName
+        self.period = "last-month"
         chartVM.selectedRange = .oneWeek
     }
-
     
     var body: some View {
         ZStack(alignment: .top) {
             TabView(selection: $selectedTab) {
-                overviewView
-                    .tag(0)
-                readmeView
-                    .tag(1)
+                OverviewView(
+                    moduleInfo: $moduleInfo,
+                    chartVM: chartVM,
+                    period: $period
+                )
+                .tag(0)
+                
+                ModuleDetailReadme(
+                    readme: $readme,
+                    isLoadingMarkdown: $isLoadingMarkdown)
+                .tag(1)
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            .animation(.easeInOut(duration: 0.3))
+            .animation(.easeInOut(duration: 0.3), value: selectedTab)
             .background(.clear)
             .padding(.horizontal, 16)
             
@@ -146,7 +131,7 @@ struct ModuleDetail: View {
                     }
                     .padding(16)
                     .pickerStyle(SegmentedPickerStyle())
-                    .animation(.easeInOut) // Apply animation to the picker
+                    .animation(.easeInOut, value: selectedTab)
                     .background(.ultraThinMaterial)
                 }
                 
@@ -154,7 +139,7 @@ struct ModuleDetail: View {
                 
             }
             .background(.clear)
-            .navigationTitle(moduleName)
+            .navigationTitle(packageName)
             .navigationBarTitleDisplayMode(.inline)
             .task(id: chartVM.selectedRange) {
                 await chartVM.fetchData(packageName: packageName)
@@ -176,40 +161,8 @@ struct ModuleDetail: View {
                 }
             }
         }
-    }
-    
-    private var overviewView: some View {
-        ScrollView {
-            Spacer(minLength: 76)
-            VStack(alignment: .leading, spacing: 20) {
-                scrollView
-                
-                Text(moduleInfo?.description ?? "")
-                    .font(.body)
-                    .foregroundColor(.secondary)
-                
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Version")
-                        .font(.headline)
-                    
-                    Text(moduleInfo?.version ?? "")
-                        .font(.subheadline)
-                }
-                
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("Package Details")
-                        .font(.headline)
-                    
-                    VStack(alignment: .leading, spacing: 12) {
-                        if let keywords = moduleInfo?.keywords {
-                            DetailRow(title: "Keywords", value: keywords.joined(separator: ", "))
-                        }
-                        DetailRow(title: "Maintainers", value: moduleInfo?.maintainers.map { $0.name }.joined(separator: ", ") ?? "")
-                    }
-                }
-                
-                Spacer()
-            }
+        .onChange(of: moduleInfo) { newValue in
+            readme = newValue?.readme
         }
     }
     
@@ -221,74 +174,27 @@ struct ModuleDetail: View {
         }
     }
     
-    private var readmeView: some View {
-        ScrollView {
-            Spacer(minLength: 76)
-            Group {
-                if isLoadingMarkdown {
-                    LoadingStateView() // Show loading indicator
-                } else {
-                    ScrollView {
-                        Markdown(moduleInfo?.readme ?? "")
-                    }
-                }
-            }
-            .onAppear {
-                fetchModuleDetail()
-            }
-        }
-    }
-    
-    private var scrollView: some View {
-        VStack {
-            ZStack {
-                DateRangePickerView(
-                    selectedRange: $chartVM.selectedRange,
-                    selectedTitle: $period
-                )
-            }
-            
-            chartView
-                .frame(maxWidth: .infinity, minHeight: 220)
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .animation(.none)
-    }
-    
-    @ViewBuilder
-    private var chartView: some View {
-        switch chartVM.fetchPhase {
-        case .fetching: LoadingStateView()
-        case .success(let data):
-            ChartView(data: data, vm: chartVM)
-        case .failure(let error):
-            ErrorStateView(error: "Chart: \(error.localizedDescription)")
-        default: EmptyView()
-        }
-    }
-    
     private func fetchModuleDetail() {
         let urlString = "https://registry.npmjs.org/\(packageName)"
         
         guard let url = URL(string: urlString) else {
             print("Your API end point is Invalid")
+            isLoadingMarkdown = false // stop loading state in case of error
             return
         }
         
         let request = URLRequest(url: url)
-        
-        isLoadingMarkdown = true
-        
-        isLoadingMarkdown = false
+        isLoadingMarkdown = true // start loading state
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
-                
+                isLoadingMarkdown = false // stop loading state in case of error
                 return
             }
             
             guard let data = data else {
                 print("Data is nil")
+                isLoadingMarkdown = false // stop loading state in case of error
                 return
             }
             
@@ -298,10 +204,11 @@ struct ModuleDetail: View {
                 let response = try decoder.decode(ModuleInfo.self, from: data)
                 DispatchQueue.main.async {
                     moduleInfo = response
-                    isLoadingMarkdown = false // Set loading state to false after data is fetched
+                    isLoadingMarkdown = false // stop loading state on success
                 }
             } catch {
                 print("Decoding error module detail: \(error.localizedDescription)")
+                isLoadingMarkdown = false // stop loading state in case of error
             }
         }.resume()
     }
@@ -312,7 +219,8 @@ struct ModuleDetail_Previews: PreviewProvider {
     static var previews: some View {
         let packageName = "@noction/vue-highcharts"
         
-        return AnyView(ModuleDetail(moduleName: packageName)
+        return AnyView(ModuleDetail(packageName: packageName)
+            .environmentObject(FavoriteStorageViewModel())
             .previewLayout(.fixed(width: 300, height: 70)))
     }
 }

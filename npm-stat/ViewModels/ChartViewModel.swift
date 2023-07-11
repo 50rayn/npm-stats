@@ -13,7 +13,7 @@ class ChartViewModel: ObservableObject {
     @Published var fetchPhase = FetchPhase<[NodePoint]>.initial
     @Published var selectedX: Int?
     var chart: [NodePoint]? { fetchPhase.value }
-
+    
     var selectedXRuleMark: (value: Int, text: String)? {
         if let index = (selectedX ?? nil),
            let chart = chart,
@@ -24,30 +24,30 @@ class ChartViewModel: ObservableObject {
         }
         return nil
     }
-
-
+    
+    
     private var _range: ChartRange {
         get {
             if let rawValue = UserDefaults.standard.string(forKey: "selectedRange") {
                 switch rawValue {
-                    case "oneWeek":
-                        return .oneWeek
-                    case "oneMonth":
-                        return .oneMonth
-                    case "threeMonth":
-                        return .threeMonth
-                    case "sixMonth":
-                        return .sixMonth
-                    case "oneYear":
-                        return .oneYear
-                    case "twoYears":
-                        return .twoYears
-                    case "fiveYears":
-                        return .fiveYears
-                    case "tenYears":
-                        return .tenYears
-                    default:
-                        return .oneWeek
+                case "oneWeek":
+                    return .oneWeek
+                case "oneMonth":
+                    return .oneMonth
+                case "threeMonth":
+                    return .threeMonth
+                case "sixMonth":
+                    return .sixMonth
+                case "oneYear":
+                    return .oneYear
+                case "twoYears":
+                    return .twoYears
+                case "fiveYears":
+                    return .fiveYears
+                case "tenYears":
+                    return .tenYears
+                default:
+                    return .oneWeek
                 }
             }
             return .oneWeek
@@ -56,7 +56,7 @@ class ChartViewModel: ObservableObject {
             UserDefaults.standard.set(newValue.title, forKey: "selectedRange")
         }
     }
-
+    
     @Published var selectedRange = ChartRange.oneWeek {
         didSet {
             _range = selectedRange
@@ -87,5 +87,5 @@ class ChartViewModel: ObservableObject {
             fetchPhase = .failure(error)
         }
     }
-
+    
 }

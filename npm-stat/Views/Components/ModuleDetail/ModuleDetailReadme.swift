@@ -6,15 +6,32 @@
 //
 
 import SwiftUI
+import MarkdownUI
 
 struct ModuleDetailReadme: View {
+    @Binding var readme: String?
+    @Binding var isLoadingMarkdown: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            Spacer(minLength: 76)
+            Group {
+                if isLoadingMarkdown {
+                    LoadingStateView()
+                } else {
+                    ScrollView {
+                        Markdown(readme ?? "")
+                    }
+                }
+            }
+        }
     }
 }
 
 struct ModuleDetailReadme_Previews: PreviewProvider {
     static var previews: some View {
-        ModuleDetailReadme()
+        let readme = "Hello, **SwiftLee** readers!"
+        
+        ModuleDetailReadme(readme: .constant(readme), isLoadingMarkdown: .constant(false))
     }
 }

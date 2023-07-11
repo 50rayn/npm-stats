@@ -14,8 +14,6 @@
 		EA0253D72A2FBE740016D292 /* npm_statTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0253D62A2FBE740016D292 /* npm_statTests.swift */; };
 		EA0253E12A2FBE740016D292 /* npm_statUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0253E02A2FBE740016D292 /* npm_statUITests.swift */; };
 		EA0253E32A2FBE740016D292 /* npm_statUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0253E22A2FBE740016D292 /* npm_statUITestsLaunchTests.swift */; };
-		EA0253F12A308CFB0016D292 /* ModuleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0253F02A308CFB0016D292 /* ModuleRow.swift */; };
-		EA0253F32A30F60D0016D292 /* ModuleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0253F22A30F60D0016D292 /* ModuleList.swift */; };
 		EA0253F52A30F65B0016D292 /* ModuleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0253F42A30F65B0016D292 /* ModuleDetail.swift */; };
 		EA0253F82A30F7630016D292 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0253F72A30F7630016D292 /* Module.swift */; };
 		EA0253FB2A312FC50016D292 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = EA0253FA2A312FC50016D292 /* SwiftUICharts */; };
@@ -26,6 +24,7 @@
 		EA54E4FD2A33BD4A00020D66 /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA54E4FC2A33BD4A00020D66 /* ErrorStateView.swift */; };
 		EA54E4FF2A33BE6000020D66 /* FetchPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA54E4FE2A33BE6000020D66 /* FetchPhase.swift */; };
 		EA54E5012A33C74000020D66 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA54E5002A33C74000020D66 /* ChartView.swift */; };
+		EA6821A72A5DCD7D0041624F /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6821A62A5DCD7D0041624F /* OverviewView.swift */; };
 		EAB1E8A92A5D44AC0099F35B /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB1E8A82A5D44AC0099F35B /* SearchItem.swift */; };
 		EAC29ECE2A5C1EB800882D05 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC29ECD2A5C1EB800882D05 /* Favorites.swift */; };
 		EAC29ED02A5C1F6000882D05 /* FavoriteStorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC29ECF2A5C1F6000882D05 /* FavoriteStorageViewModel.swift */; };
@@ -63,8 +62,6 @@
 		EA0253DC2A2FBE740016D292 /* npm-statUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "npm-statUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0253E02A2FBE740016D292 /* npm_statUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = npm_statUITests.swift; sourceTree = "<group>"; };
 		EA0253E22A2FBE740016D292 /* npm_statUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = npm_statUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		EA0253F02A308CFB0016D292 /* ModuleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleRow.swift; sourceTree = "<group>"; };
-		EA0253F22A30F60D0016D292 /* ModuleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleList.swift; sourceTree = "<group>"; };
 		EA0253F42A30F65B0016D292 /* ModuleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleDetail.swift; sourceTree = "<group>"; };
 		EA0253F72A30F7630016D292 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		EA54E4F22A33A6C000020D66 /* DateRangePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangePickerView.swift; sourceTree = "<group>"; };
@@ -74,6 +71,7 @@
 		EA54E4FC2A33BD4A00020D66 /* ErrorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
 		EA54E4FE2A33BE6000020D66 /* FetchPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhase.swift; sourceTree = "<group>"; };
 		EA54E5002A33C74000020D66 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		EA6821A62A5DCD7D0041624F /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		EAB1E8A82A5D44AC0099F35B /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		EAC29ECD2A5C1EB800882D05 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		EAC29ECF2A5C1F6000882D05 /* FavoriteStorageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStorageViewModel.swift; sourceTree = "<group>"; };
@@ -174,10 +172,6 @@
 				EAC7B59A2A45B787002B18B2 /* Screens */,
 				EA54E4F72A33BCFF00020D66 /* Common */,
 				EA0253C72A2FBE720016D292 /* ContentView.swift */,
-				EA0253F02A308CFB0016D292 /* ModuleRow.swift */,
-				EA0253F22A30F60D0016D292 /* ModuleList.swift */,
-				EA54E4F22A33A6C000020D66 /* DateRangePickerView.swift */,
-				EA54E5002A33C74000020D66 /* ChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -241,7 +235,10 @@
 		EAC7B59E2A45C2DD002B18B2 /* ModuleDetail */ = {
 			isa = PBXGroup;
 			children = (
+				EA54E4F22A33A6C000020D66 /* DateRangePickerView.swift */,
+				EA54E5002A33C74000020D66 /* ChartView.swift */,
 				EAC7B59F2A45C30E002B18B2 /* ModuleDetailReadme.swift */,
+				EA6821A62A5DCD7D0041624F /* OverviewView.swift */,
 			);
 			path = ModuleDetail;
 			sourceTree = "<group>";
@@ -389,7 +386,6 @@
 				EAC7B5A02A45C30E002B18B2 /* ModuleDetailReadme.swift in Sources */,
 				EA54E5012A33C74000020D66 /* ChartView.swift in Sources */,
 				EA0253C82A2FBE720016D292 /* ContentView.swift in Sources */,
-				EA0253F32A30F60D0016D292 /* ModuleList.swift in Sources */,
 				EA0253C62A2FBE720016D292 /* npm_statApp.swift in Sources */,
 				EA54E4F32A33A6C000020D66 /* DateRangePickerView.swift in Sources */,
 				EAB1E8A92A5D44AC0099F35B /* SearchItem.swift in Sources */,
@@ -398,8 +394,8 @@
 				EAC29ECE2A5C1EB800882D05 /* Favorites.swift in Sources */,
 				EA0253F52A30F65B0016D292 /* ModuleDetail.swift in Sources */,
 				EA54E4F62A33B52500020D66 /* ChartViewModel.swift in Sources */,
+				EA6821A72A5DCD7D0041624F /* OverviewView.swift in Sources */,
 				EA54E4FB2A33BD3200020D66 /* LoadingStateView.swift in Sources */,
-				EA0253F12A308CFB0016D292 /* ModuleRow.swift in Sources */,
 				EAC29ED22A5C938500882D05 /* SearchModules.swift in Sources */,
 				EA54E4FF2A33BE6000020D66 /* FetchPhase.swift in Sources */,
 				EA0253F82A30F7630016D292 /* Module.swift in Sources */,

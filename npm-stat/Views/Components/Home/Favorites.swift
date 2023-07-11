@@ -16,7 +16,7 @@ struct Favorites: View {
                 .padding()
         } else {
             ForEach(favourites.myList, id: \.self) { item in
-                NavigationLink(destination: ModuleDetail(moduleName: item)) {
+                NavigationLink(destination: ModuleDetail(packageName: item)) {
                     Text(item)
                         .fontWeight(.semibold)
                 }
@@ -28,5 +28,6 @@ struct Favorites: View {
 struct Favorites_Previews: PreviewProvider {
     static var previews: some View {        
         return Favorites()
+            .environmentObject(FavoriteStorageViewModel())
     }
 }

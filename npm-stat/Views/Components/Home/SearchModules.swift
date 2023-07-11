@@ -50,12 +50,11 @@ struct SearchModules<Content: View>: View {
                     ScrollView {
                         ForEach(searchModules.indices, id: \.self) { index in
                             NavigationLink(
-                                destination: ModuleDetail(moduleName: searchModules[index].package.name)
+                                destination: ModuleDetail(packageName: searchModules[index].package.name)
                             ) {
                                 SearchItem(
-                                    name: searchModules[index].package.name,
-                                    description: searchModules[index].package.description ?? "",
-                                    version: searchModules[index].package.version
+                                    title: searchModules[index].package.name,
+                                    subtitle: searchModules[index].package.description ?? ""
                                 )
                                 Spacer()
                             }
