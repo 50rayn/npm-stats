@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct npm_statApp: App {
+    @StateObject private var favourites = FavoriteStorageViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(favourites)
         }
     }
 }

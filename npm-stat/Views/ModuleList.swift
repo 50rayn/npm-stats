@@ -88,7 +88,7 @@ struct ModuleList: View {
                         if searchModules?.isEmpty == false {
                             ScrollView {
                                 ForEach(searchModules!.indices, id: \.self) { index in
-                                    NavigationLink(destination: ModuleDetail(module: searchModules![index].package)) {
+                                    NavigationLink(destination: ModuleDetail(moduleName: searchModules![index].package.name)) {
                                         Text(searchModules![index].package.name)
                                         Spacer()
                                     }
@@ -108,7 +108,7 @@ struct ModuleList: View {
                         if favouriteModules?.isEmpty == false {
                             ScrollView {
                                 ForEach(favouriteModules!.indices, id: \.self) { index in
-                                    NavigationLink(destination: ModuleDetail(module: favouriteModules![index].package)) {
+                                    NavigationLink(destination: ModuleDetail(moduleName: favouriteModules![index].package.name)) {
                                         ModuleRow(module: favouriteModules![index].package)
                                     }
                                     .buttonStyle(PlainButtonStyle())

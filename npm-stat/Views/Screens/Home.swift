@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct Home: View {
+    @State private var searchText: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            SearchModules(queryString: searchText) {
+                List {
+                    Section {
+                        Favorites()
+                    } header: {
+                        Text("Favorites")
+                    }
+                }
+            }
+            .navigationBarTitle("Home")
+            .listStyle(.insetGrouped)
+        }
+        .searchable(text: $searchText)
+        
     }
 }
 
